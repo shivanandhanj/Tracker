@@ -1,3 +1,4 @@
+
 const socket=io()
 if(navigator.geolocation){
     navigator.geolocation.watchPosition((position)=>{
@@ -15,7 +16,7 @@ if(navigator.geolocation){
         
     );
 }
-let map=L.map("map").setView([0,0],16)
+let map=L.map("map").setView([0,0],20)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'shiva'
 }).addTo(map);
@@ -36,4 +37,3 @@ socket.on("user-dconnect",(id)=>{
         delete marker[id]
     }
 })
-
